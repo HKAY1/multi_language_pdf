@@ -1,0 +1,27 @@
+name: multi_language_pdf
+description: Build PDFs using a Flutter-inspired DSL. Multi-language support via WebView rendering. Zero state-manager dependency.
+version: 0.1.0
+homepage: https://github.com/HKAY1/multi_language_pdf
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+  flutter: '>=3.10.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  webview_flutter: 4.13.1
+  path_provider: ^2.1.5
+  http: ^1.6.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+  test: ^1.24.0
+
+flutter:
+  assets:
+    - assets/pdf_engine/index.html
+    - assets/pdf_engine/js/html2canvas.min.js
+    - assets/pdf_engine/js/jspdf.umd.min.js
