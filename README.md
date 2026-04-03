@@ -6,17 +6,9 @@ A Flutter package for generating multi-language PDFs using a Flutter-inspired wi
 
 ## Why this package?
 
-Native Flutter PDF libraries (like `pdf`/`printing`) require you to embed a separate font file for every script you want to render. A document mixing English, Hindi, Russian, Japanese, and Chinese needs five different fonts, manual glyph mapping, and complex layout code.
+`multi_language_pdf` lets you generate PDFs that contain multiple languages in a single document — English, Hindi, Russian, Japanese, Chinese, Arabic, and any other Unicode script — without embedding fonts or doing any per-language configuration. You compose the layout using a Flutter-inspired widget DSL (`PdfText`, `PdfRow`, `PdfColumn`, `PdfTable`, and more), and the package handles the rest: it serialises your widget tree to HTML, renders it inside a hidden WebView using the browser's native text engine, and captures each page with `html2canvas` + `jsPDF`.
 
-`multi_language_pdf` sidesteps this entirely: it serialises your widget tree to HTML, renders it in a hidden WebView, and captures each page with `html2canvas`. The browser handles every Unicode script — your code stays the same regardless of language.
-
-| | Native Flutter PDF | multi_language_pdf |
-|---|---|---|
-| Multi-language in one document | Manual font embedding per script | Works out of the box |
-| Layout API | Low-level drawing primitives | Flutter-like widget DSL |
-| State manager required | Depends on implementation | None — pure callbacks |
-| Pagination | Manual | Automatic (semantic, no mid-row cuts) |
-| Preview widget | Not included | `PdfPreviewWidget` included |
+The result is a pixel-perfect PDF with correct multi-script rendering, semantic pagination (no mid-element page cuts), and zero state-manager dependency.
 
 ---
 
@@ -483,18 +475,6 @@ Every error goes to `onError` — no exceptions are thrown at the caller.
 
 ---
 
-## Dependencies
-
-| Package | Version | Purpose |
-|---|---|---|
-| `webview_flutter` | `4.13.1` | WebView rendering engine |
-| `path_provider` | `^2.1.5` | Write PDF to temp directory |
-| `http` | `^1.6.0` | Fetch network images |
-
-No state management dependency of any kind.
-
----
-
 ## Support My Work
 
 If you find this package useful, consider supporting me with a coffee. Your support helps me maintain and improve this package! ☕️
@@ -504,6 +484,18 @@ If you find this package useful, consider supporting me with a coffee. Your supp
     <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;">
   </a>
 </div>
+
+---
+
+## Dependencies
+
+| Package | Version | Purpose |
+|---|---|---|
+| `webview_flutter` | `4.13.1` | WebView rendering engine |
+| `path_provider` | `^2.1.5` | Write PDF to temp directory |
+| `http` | `^1.6.0` | Fetch network images |
+
+No state management dependency of any kind.
 
 ---
 

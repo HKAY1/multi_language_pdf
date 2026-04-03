@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <script src="js/html2canvas.min.js"></script>
+  <script src="js/jspdf.umd.min.js"></script>
+  <style>
+    body { margin: 0; padding: 0; background: #fff; }
+    #content { background: #fff; }
+    #staging {
+      position: absolute;
+      left: -99999px;
+      top: 0;
+      background: #fff;
+      overflow: hidden;
+    }
+  </style>
+</head>
+<body>
+  <div id="content"></div>
+  <div id="staging"></div>
+
+  <script>
+    // Called by PdfGenerator via runJavaScript.
+    // html: inner HTML of #content (the data-pdf-block divs)
+    // pageWidthPx, pageHeightPx: from PdfPageConfig
+    // marginTop, marginRight, marginBottom, marginLeft: from PdfPageConfig.margin
+    async function generatePdf(html, pageWidthPx, pageHeightPx, marginTop, marginRight, marginBottom, marginLeft) {
+      try {
+        // Inject HTML
+        const content = document.getElementById('content');
+        content.style.width = pageWidthPx + 'px';
+        content.innerHTML = html;
+
+        // Wait for images/fonts to load
+        await new Promise(r => setTimeout(r, 600));
+
+        // === PASS 1: MEASURE ===
+        const blocks = Array.from(content.querySelectorAll('[data-pdf-block]'));
+        if (blocks.length === 0) {
+          Error.postMessage('No blocks found in document.');
+          return;
+        }
+        const blockHeights = blocks.map(b => b.getBoundingClientRect().height);
+
+        // === PASS 2: GROUP INTO PAGES ===
+        const usableHeight = pageHeightPx - marginTop - marginBottom;
+        const pages = [];
+        let currentPageBlocks = [];
+        let currentHeight = 0;
+
+        for (let i = 0; i < blocks.length; i++) {
+          const h = blockHeights[i];
+          // If this block alone exceeds a full page, it still goes on its own page.
+          if (currentHeight + h > usableHeight && currentPageBlocks.length > 0) {
+            pages.push(currentPageBlocks);
+            currentPageBlocks = [];
+            currentHeight = 0;
+          }
+          currentPageBlocks.push(blocks[i]);
+          currentHeight += h;
+        }
+        if (currentPageBlocks.length > 0) pages.push(currentPageBlocks);
+
+        const totalPages = pages.length;
+
+        // === PASS 3: RENDER PER PAGE ===
+        const { jsPDF } = window.jspdf;
+        const pdf = new jsPDF({
+          orientation: pageWidthPx > pageHeightPx ? 'l' : 'p',
+          unit: 'pt',
+          format: 'a4',
+          compress: true
+        });
+
+        const pageWidthPt = pdf.internal.pageSize.getWidth();
+        const pageHeightPt = pdf.internal.pageSize.getHeight();
+        const marginLeftPt = (marginLeft * 72) / 96;
+        const marginTopPt = (marginTop * 72) / 96;
+        const usableWidthPt = pageWidthPt - (marginLeft * 72 / 96) - (marginRight * 72 / 96);
+
+        const staging = document.getElementById('staging');
+        staging.style.width = pageWidthPx + 'px';
+
+        for (let p = 0; p < pages.length; p++) {
+          // Clone page blocks into staging area
+          staging.innerHTML = '';
+          staging.style.padding = `${marginTop}px ${marginRight}px ${marginBottom}px ${marginLeft}px`;
+          pages[p].forEach(block => staging.appendChild(block.cloneNode(true)));
+
+          // Capture
+          const canvas = await html2canvas(staging, {
+            scale: 2,
+            useCORS: true,
+            backgroundColor: '#ffffff',
+            width: pageWidthPx,
+          });
+
+          const imgData = canvas.toDataURL('image/jpeg', 0.92);
+          const sliceHeightPt = (canvas.height * usableWidthPt) / canvas.width;
+
+          if (p > 0) pdf.addPage();
+          pdf.setFillColor(255, 255, 255);
+          pdf.rect(0, 0, pageWidthPt, pageHeightPt, 'F');
+          pdf.addImage(imgData, 'JPEG', marginLeftPt, marginTopPt, usableWidthPt, sliceHeightPt);
+
+          // Report progress
+          Progress.postMessage(JSON.stringify({ current: p + 1, total: totalPages }));
+        }
+
+        staging.innerHTML = '';
+
+        // Encode to base64
+        const buffer = pdf.output('arraybuffer');
+        const uint8Array = new Uint8Array(buffer);
+        let binary = '';
+        for (let i = 0; i < uint8Array.length; i++) {
+          binary += String.fromCharCode(uint8Array[i]);
+        }
+        Callback.postMessage(btoa(binary));
+
+      } catch (e) {
+        Error.postMessage(e.toString());
+      }
+    }
+
+    window.addEventListener('load', () => Ready.postMessage('ready'));
+  </script>
+</body>
+</html>

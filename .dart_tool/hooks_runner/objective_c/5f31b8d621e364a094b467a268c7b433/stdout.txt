@@ -1,0 +1,62 @@
+Running `(cd /Users/admin/.pub-cache/hosted/pub.dev/objective_c-9.3.0/; ANDROID_HOME=/Users/admin/Library/Android/sdk TMPDIR=/var/folders/tw/73f_0ql151z9mh6krtknyxsw0000gn/T/ PATH=/Users/admin/.local/bin:/Library/Java/JavaVirtualMachines/temurin-17.jdk/Contents/Home/bin:/Users/admin/.nvm/versions/node/v24.14.0/bin:/usr/local/bin:/usr/local/sbin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/opt/pmk/env/global/bin:/Library/Apple/usr/bin:/Library/Java/JavaVirtualMachines/temurin-17.jdk/Contents/Home/bin:/Users/admin/.nvm/versions/node/v24.14.0/bin:/Users/admin/Flutter/flutter/bin:/Users/admin/Library/Android/sdk/emulator:/Users/admin/Library/Android/sdk/platform-tools:/Users/admin/Flutter/flutter/bin:/Users/admin/Library/Android/sdk/emulator:/Users/admin/Library/Android/sdk/platform-tools HOME=/Users/admin /Users/admin/Flutter/flutter/bin/cache/dart-sdk/bin/dart --packages=/Users/admin/Harsh/package/multi_language_pdf/multi_language_pdf/.dart_tool/package_config.json /Users/admin/Harsh/package/multi_language_pdf/multi_language_pdf/.dart_tool/hooks_runner/objective_c/5f31b8d621e364a094b467a268c7b433/hook.dill --config=/Users/admin/Harsh/package/multi_language_pdf/multi_language_pdf/.dart_tool/hooks_runner/objective_c/5f31b8d621e364a094b467a268c7b433/input.json )`.
+INFO: 2026-04-02 18:03:04.673997: Running `/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang --version`.
+
+INFO: 2026-04-02 18:03:05.012588: Running `/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang --version`.
+
+INFO: 2026-04-02 18:03:05.060860: Running: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.4.sdk -target x86_64-apple-darwin -mmacos-version-min=13 -c /Users/admin/.pub-cache/hosted/pub.dev/objective_c-9.3.0/src/include/dart_api_dl.c -fpic -I src -o /Users/admin/Harsh/package/multi_language_pdf/multi_language_pdf/.dart_tool/hooks_runner/shared/objective_c/build/5f31b8d621/obj/src/include/dart_api_dl.c.o
+
+INFO: 2026-04-02 18:03:05.062068: Running: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.4.sdk -target x86_64-apple-darwin -mmacos-version-min=13 -c /Users/admin/.pub-cache/hosted/pub.dev/objective_c-9.3.0/src/objective_c.c -fpic -I src -o /Users/admin/Harsh/package/multi_language_pdf/multi_language_pdf/.dart_tool/hooks_runner/shared/objective_c/build/5f31b8d621/obj/src/objective_c.c.o
+
+INFO: 2026-04-02 18:03:05.062615: Running: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.4.sdk -target x86_64-apple-darwin -mmacos-version-min=13 -c /Users/admin/.pub-cache/hosted/pub.dev/objective_c-9.3.0/test/util.c -fpic -I src -o /Users/admin/Harsh/package/multi_language_pdf/multi_language_pdf/.dart_tool/hooks_runner/shared/objective_c/build/5f31b8d621/obj/test/util.c.o
+
+INFO: 2026-04-02 18:03:05.062887: Running: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.4.sdk -target x86_64-apple-darwin -mmacos-version-min=13 -x objective-c -fobjc-arc -c /Users/admin/.pub-cache/hosted/pub.dev/objective_c-9.3.0/src/input_stream_adapter.m -fpic -I src -o /Users/admin/Harsh/package/multi_language_pdf/multi_language_pdf/.dart_tool/hooks_runner/shared/objective_c/build/5f31b8d621/obj/src/input_stream_adapter.m.o
+
+INFO: 2026-04-02 18:03:05.063141: Running: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.4.sdk -target x86_64-apple-darwin -mmacos-version-min=13 -x objective-c -fobjc-arc -c /Users/admin/.pub-cache/hosted/pub.dev/objective_c-9.3.0/src/objective_c.m -fpic -I src -o /Users/admin/Harsh/package/multi_language_pdf/multi_language_pdf/.dart_tool/hooks_runner/shared/objective_c/build/5f31b8d621/obj/src/objective_c.m.o
+
+INFO: 2026-04-02 18:03:05.063703: Running: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.4.sdk -target x86_64-apple-darwin -mmacos-version-min=13 -x objective-c -fobjc-arc -c /Users/admin/.pub-cache/hosted/pub.dev/objective_c-9.3.0/src/ns_number.m -fpic -I src -o /Users/admin/Harsh/package/multi_language_pdf/multi_language_pdf/.dart_tool/hooks_runner/shared/objective_c/build/5f31b8d621/obj/src/ns_number.m.o
+
+INFO: 2026-04-02 18:03:05.064424: Running: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.4.sdk -target x86_64-apple-darwin -mmacos-version-min=13 -x objective-c -fobjc-arc -c /Users/admin/.pub-cache/hosted/pub.dev/objective_c-9.3.0/src/protocol.m -fpic -I src -o /Users/admin/Harsh/package/multi_language_pdf/multi_language_pdf/.dart_tool/hooks_runner/shared/objective_c/build/5f31b8d621/obj/src/protocol.m.o
+
+INFO: 2026-04-02 18:03:05.064914: Running: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.4.sdk -target x86_64-apple-darwin -mmacos-version-min=13 -x objective-c -fobjc-arc -c /Users/admin/.pub-cache/hosted/pub.dev/objective_c-9.3.0/src/objective_c_bindings_generated.m -fpic -I src -o /Users/admin/Harsh/package/multi_language_pdf/multi_language_pdf/.dart_tool/hooks_runner/shared/objective_c/build/5f31b8d621/obj/src/objective_c_bindings_generated.m.o
+
+INFO: 2026-04-02 18:03:05.434375: 
+INFO: 2026-04-02 18:03:05.434508: Generated /Users/admin/Harsh/package/multi_language_pdf/multi_language_pdf/.dart_tool/hooks_runner/shared/objective_c/build/5f31b8d621/obj/test/util.c.o
+
+INFO: 2026-04-02 18:03:05.434825: 
+INFO: 2026-04-02 18:03:05.434872: 
+INFO: 2026-04-02 18:03:05.434908: Generated /Users/admin/Harsh/package/multi_language_pdf/multi_language_pdf/.dart_tool/hooks_runner/shared/objective_c/build/5f31b8d621/obj/src/objective_c.c.o
+
+INFO: 2026-04-02 18:03:05.446660: 
+INFO: 2026-04-02 18:03:05.446708: 
+INFO: 2026-04-02 18:03:05.446730: Generated /Users/admin/Harsh/package/multi_language_pdf/multi_language_pdf/.dart_tool/hooks_runner/shared/objective_c/build/5f31b8d621/obj/src/include/dart_api_dl.c.o
+
+INFO: 2026-04-02 18:03:05.451015: 
+INFO: 2026-04-02 18:03:05.451060: 
+INFO: 2026-04-02 18:03:05.451097: Generated /Users/admin/Harsh/package/multi_language_pdf/multi_language_pdf/.dart_tool/hooks_runner/shared/objective_c/build/5f31b8d621/obj/src/observer.m.o
+
+INFO: 2026-04-02 18:03:05.451823: 
+INFO: 2026-04-02 18:03:05.451871: 
+INFO: 2026-04-02 18:03:05.451909: Generated /Users/admin/Harsh/package/multi_language_pdf/multi_language_pdf/.dart_tool/hooks_runner/shared/objective_c/build/5f31b8d621/obj/src/protocol.m.o
+
+INFO: 2026-04-02 18:03:06.225682: 
+INFO: 2026-04-02 18:03:06.225794: 
+INFO: 2026-04-02 18:03:06.225829: Generated /Users/admin/Harsh/package/multi_language_pdf/multi_language_pdf/.dart_tool/hooks_runner/shared/objective_c/build/5f31b8d621/obj/src/ns_number.m.o
+
+INFO: 2026-04-02 18:03:06.264670: 
+INFO: 2026-04-02 18:03:06.264838: 
+INFO: 2026-04-02 18:03:06.264916: Generated /Users/admin/Harsh/package/multi_language_pdf/multi_language_pdf/.dart_tool/hooks_runner/shared/objective_c/build/5f31b8d621/obj/src/objective_c.m.o
+
+INFO: 2026-04-02 18:03:06.265394: 
+INFO: 2026-04-02 18:03:06.265437: 
+INFO: 2026-04-02 18:03:06.265465: Generated /Users/admin/Harsh/package/multi_language_pdf/multi_language_pdf/.dart_tool/hooks_runner/shared/objective_c/build/5f31b8d621/obj/src/input_stream_adapter.m.o
+
+INFO: 2026-04-02 18:03:06.293319: 
+INFO: 2026-04-02 18:03:06.293394: 
+INFO: 2026-04-02 18:03:06.293427: Generated /Users/admin/Harsh/package/multi_language_pdf/multi_language_pdf/.dart_tool/hooks_runner/shared/objective_c/build/5f31b8d621/obj/src/objective_c_bindings_generated.m.o
+
+INFO: 2026-04-02 18:03:06.295562: Running: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -shared -Wl,-encryptable -undefined dynamic_lookup -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.4.sdk -target x86_64-apple-darwin -mmacos-version-min=13 /Users/admin/Harsh/package/multi_language_pdf/multi_language_pdf/.dart_tool/hooks_runner/shared/objective_c/build/5f31b8d621/obj/src/include/dart_api_dl.c.o /Users/admin/Harsh/package/multi_language_pdf/multi_language_pdf/.dart_tool/hooks_runner/shared/objective_c/build/5f31b8d621/obj/src/objective_c.c.o /Users/admin/Harsh/package/multi_language_pdf/multi_language_pdf/.dart_tool/hooks_runner/shared/objective_c/build/5f31b8d621/obj/test/util.c.o /Users/admin/Harsh/package/multi_language_pdf/multi_language_pdf/.dart_tool/hooks_runner/shared/objective_c/build/5f31b8d621/obj/src/input_stream_adapter.m.o /Users/admin/Harsh/package/multi_language_pdf/multi_language_pdf/.dart_tool/hooks_runner/shared/objective_c/build/5f31b8d621/obj/src/objective_c.m.o /Users/admin/Harsh/package/multi_language_pdf/multi_language_pdf/.dart_tool/hooks_runner/shared/objective_c/build/5f31b8d621/obj/src/observer.m.o /Users/admin/Harsh/package/multi_language_pdf/multi_language_pdf/.dart_tool/hooks_runner/shared/objective_c/build/5f31b8d621/obj/src/ns_number.m.o /Users/admin/Harsh/package/multi_language_pdf/multi_language_pdf/.dart_tool/hooks_runner/shared/objective_c/build/5f31b8d621/obj/src/protocol.m.o /Users/admin/Harsh/package/multi_language_pdf/multi_language_pdf/.dart_tool/hooks_runner/shared/objective_c/build/5f31b8d621/obj/src/objective_c_bindings_generated.m.o -o /Users/admin/Harsh/package/multi_language_pdf/multi_language_pdf/.dart_tool/hooks_runner/shared/objective_c/build/5f31b8d621/objective_c.dylib
+
+INFO: 2026-04-02 18:03:06.666444: 
+INFO: 2026-04-02 18:03:06.666558: 
+INFO: 2026-04-02 18:03:06.666585: Generated /Users/admin/Harsh/package/multi_language_pdf/multi_language_pdf/.dart_tool/hooks_runner/shared/objective_c/build/5f31b8d621/objective_c.dylib
+
